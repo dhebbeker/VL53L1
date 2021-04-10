@@ -62,6 +62,9 @@
 #define DEV_I2C Wire
 #define SerialPort Serial
 
+#define A2 D5
+#define A1 D6
+
 #ifndef LED_BUILTIN
 #define LED_BUILTIN 13
 #endif
