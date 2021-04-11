@@ -126,7 +126,7 @@ void loop()
       SerialPort.print(report);
       for(j=0;j<std::min(no_of_object_found, VL53L1_MAX_RANGE_RESULTS);j++)
       {
-         if(j!=0)SerialPort.print("\r\n                               ");
+         SerialPort.print("\r\n                               ");
          SerialPort.print("status=");
          SerialPort.print(pMultiRangingData->RangeData[j].RangeStatus);
          SerialPort.print(", D=");
