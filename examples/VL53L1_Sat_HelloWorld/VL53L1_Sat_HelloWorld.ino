@@ -109,6 +109,7 @@ void loop()
    int no_of_object_found = 0, j;
    char report[64];
    int status;
+   static unsigned long lastPrintTime = 0;
 
    do
    {
@@ -118,8 +119,9 @@ void loop()
    //Led on
    digitalWrite(LedPin, HIGH);
 
-   if((!status)&&(NewDataReady!=0))
+   if((!status)&&(NewDataReady!=0)&&(millis()-lastPrintTime>500))
    {
+      lastPrintTime = millis();
       status = sensor_vl53l1_sat.VL53L1_GetMultiRangingData(pMultiRangingData);
       no_of_object_found=pMultiRangingData->NumberOfObjectsFound;
       snprintf(report, sizeof(report), "VL53L1 Satellite: Count=%d, #Objs=%1d ", pMultiRangingData->StreamCount, no_of_object_found);
