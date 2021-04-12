@@ -38,14 +38,21 @@
  ******************************************************************************
  */
 /*
- * To use this sketch you need to connect the VL53L1 satellite sensor directly to the Nucleo board with wires in this way:
- * pin 1 (Interrupt) of the VL53L1 satellite connected to pin A2 of the Nucleo board 
- * pin 2 (SCL_I) of the VL53L1 satellite connected to pin D15 (SCL) of the Nucleo board with a Pull-Up resistor of 4.7 KOhm
- * pin 3 (XSDN_I) of the VL53L1 satellite connected to pin A1 of the Nucleo board
- * pin 4 (SDA_I) of the VL53L1 satellite connected to pin D14 (SDA) of the Nucleo board with a Pull-Up resistor of 4.7 KOhm
- * pin 5 (VDD) of the VL53L1 satellite connected to 3V3 pin of the Nucleo board
- * pin 6 (GND) of the VL53L1 satellite connected to GND of the Nucleo board
- * pins 7, 8, 9 and 10 are not connected.
+  Hardware setup
+  ==============
+
+  | VL53L1-SATEL pin| function                           | NodeMCU pin|
+  |-----------------|------------------------------------|------------|
+  | 1 (purple)      | interrupt `INT` / `GPIO1`          | D5         |
+  | 2 (blue)        | I²C clock `SCL_I`                  | D1         |
+  | 3 (green)       | standby `XSDCN_I` / `XSHUT`        | D6         |
+  | 4 (yellow)      | I²C data `SCA_I`                   | D2         |
+  | 5 (orange)      | supply voltage (2,8V-5V) `VDD`     | 3V         |
+  | 6 (red)         | ground `GND`                       | G          |
+  | 7               | not connected                      |            |
+  | 8               | not connected                      |            |
+  | 9 (brown)       | ground (optional?) `NC1_I` / `GND2`| G          |
+  | 10              | do not connect `NC0_I` / `DNC`     |            |
  */
 /* Includes ------------------------------------------------------------------*/
 #include <Arduino.h>
