@@ -89,7 +89,7 @@ void setup()
    // Led.
    pinMode(LedPin, OUTPUT);
    pinMode(interruptPin, INPUT_PULLUP);
-   attachInterrupt(interruptPin, measure, FALLING);
+   attachInterrupt(digitalPinToInterrupt(interruptPin), measure, FALLING);
 
    // Initialize serial for output.
    SerialPort.begin(115200);
