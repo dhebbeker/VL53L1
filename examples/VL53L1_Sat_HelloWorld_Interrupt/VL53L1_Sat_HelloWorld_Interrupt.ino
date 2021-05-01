@@ -67,14 +67,14 @@
 #define SerialPort Serial
 
 #ifndef LED_BUILTIN
-#define LED_BUILTIN 13
+#define LED_BUILTIN D4
 #endif
 #define LedPin LED_BUILTIN
 
-#define interruptPin A2
+#define interruptPin D5
 
 // Components.
-VL53L1 sensor_vl53l1_sat(&DEV_I2C, A1);
+VL53L1 sensor_vl53l1_sat(&DEV_I2C, D6);
 
 volatile int interruptCount=0;
 
