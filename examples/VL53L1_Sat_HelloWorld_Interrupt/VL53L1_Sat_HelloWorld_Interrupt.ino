@@ -78,7 +78,7 @@ VL53L1 sensor_vl53l1_sat(&DEV_I2C, D6);
 
 volatile int interruptCount=0;
 
-void measure()
+void IRAM_ATTR measure()
 {
    interruptCount=1;
 }
